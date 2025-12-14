@@ -340,7 +340,7 @@
   }))
 
   $('.grid').imagesLoaded(function () {
-    $('.grid').isotope({
+    var $grid = $('.grid').isotope({
       itemSelector: '.grid-item',
       percentPosition: true,
       layoutMode: 'masonry',
@@ -357,6 +357,9 @@
         }
       }
     })
+
+    var initialFilter = $('.filters-button-group').find('.is-checked').attr('data-filter') || '*'
+    $grid.isotope({ filter: initialFilter })
   })
 
   var filterFns = {
