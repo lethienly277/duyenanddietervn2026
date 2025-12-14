@@ -1,239 +1,727 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Our Wedding — Coming Soon</title>
-  <meta name="description" content="Our wedding website is under construction and will be live soon. Stay tuned for details, photos, and RSVP!" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D & G</title>
+
+  <!-- Bootstrap CSS -->
+  <link id="font-faces" rel="stylesheet" href="css/font.css">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <!-- Flaticon CSS -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💞</text></svg>">  <!-- Owl Carousel CSS -->
+  <link href="css/owl.carousel.css" rel="stylesheet">
+  <link href="css/owl.transitions.css" rel="stylesheet">
+  <!-- ColorBox CSS -->
+  <link href="css/colorbox.css" rel="stylesheet">
+  <!-- Theme CSS -->
+  <link href="css/style.css?v3" rel="stylesheet">
+
+  <!-- Color CSS -->
+  <link href="css/brown.css" rel="stylesheet">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💞</text></svg>">
-  <style>
-    :root {
-      --bg: radial-gradient(1200px 800px at 10% 10%, #fff5f7 0%, #fff 45%),
-            radial-gradient(1000px 600px at 100% 0%, #f0f7ff 0%, transparent 60%),
-            linear-gradient(180deg, #ffffff, #fff);
-      --rose: #ff6b8a;
-      --rose-2: #ff8fb1;
-      --blush: #ffe3eb;
-      --ink: #27303f;
-      --muted: #6b7280;
-      --ring: #ffd166;
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: 'Quicksand', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-    }
-    .wrap {
-      min-height: 100dvh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-    .card {
-      position: relative;
-      width: min(960px, 100%);
-      background: #fff;
-      border-radius: 28px;
-      padding: clamp(20px, 4vw, 40px);
-      box-shadow: 0 30px 60px rgba(17, 24, 39, 0.12);
-      overflow: hidden;
-      border: 1px solid #f3f4f6;
-    }
-    .badge {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #fff0f4;
-      color: var(--rose);
-      font-weight: 700;
-      letter-spacing: .3px;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: clamp(34px, 6vw, 52px);
-      line-height: 1.1;
-      margin: 16px 0 10px;
-    }
-    p.lead {
-      color: var(--muted);
-      font-size: clamp(16px, 2.2vw, 18px);
-      margin: 0 0 22px;
-    }
-    .cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      margin-top: 18px;
-    }
-    .btn {
-      appearance: none;
-      border: none;
-      background: var(--rose);
-      color: white;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 10px 18px rgba(255,107,138,.25);
-      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .btn:hover { transform: translateY(-1px); filter: brightness(1.02); }
-    .btn:active { transform: translateY(0); box-shadow: 0 6px 12px rgba(255,107,138,.22); }
+  <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
 
-    .ghost {
-      background: #fff;
-      color: var(--rose);
-      border: 2px solid #ffd6e2;
-      box-shadow: none;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: clamp(18px, 4vw, 32px);
-    }
-    @media (max-width: 860px) {
-      .grid { grid-template-columns: 1fr; }
-    }
-
-    .illustration {
-      position: relative;
-      aspect-ratio: 4/3;
-      border-radius: 20px;
-      background: linear-gradient(145deg, #fff7fa, #f0f9ff);
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border: 1px solid #fce7f3;
-    }
-
-    .hearts { position: absolute; inset: 0; pointer-events: none; }
-    .heart {
-      position: absolute;
-      width: 28px; height: 28px;
-      display: grid; place-items: center; border-radius: 50%;
-      background: linear-gradient(145deg, var(--rose), var(--rose-2));
-      color: #fff;
-      filter: drop-shadow(0 8px 14px rgba(255,107,138,.25));
-      animation: float var(--dur) linear infinite;
-      transform: translateY(100%);
-    }
-    @keyframes float {
-      0% { transform: translateY(110%); opacity: 0; }
-      10% { opacity: 1; }
-      100% { transform: translateY(-20%); opacity: 0; }
-    }
-
-    .ring {
-      position: relative; width: min(260px, 80%); aspect-ratio: 1/1; 
-      display: grid; place-items: center;
-      filter: drop-shadow(0 20px 30px rgba(17,24,39,.08));
-    }
-    .ring svg { width: 100%; height: auto; }
-
-    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .gallery img {
-      width: 100%; height: 110px; object-fit: cover;
-      border-radius: 14px; border: 1px solid #f3f4f6;
-    }
-    @media (max-width: 520px){ .gallery { grid-template-columns: 1fr 1fr; } }
-
-    .footer {
-      margin-top: 28px;
-      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; color: var(--muted);
-      font-size: 14px;
-    }
-    .footer a { color: var(--rose); font-weight: 700; text-decoration: none; }
-  </style>
+  <script src="https://use.fontawesome.com/5383768c1f.js"></script>
+  <meta property="og:image" content="">
 </head>
-<body>
-  <div class="wrap">
-    <main class="card" role="main" aria-label="Wedding website coming soon">
-      <span class="badge" aria-hidden="true">💞 Our Wedding</span>
-      <h1>We’re getting married — website coming soon!</h1>
-      <p class="lead">We’re crafting something sweet for our big day. The full site will include our story, event details, RSVP, and photo gallery. Thank you for the love and patience. 💖</p>
 
-      <section class="grid" aria-label="Preview and actions">
-        <!-- Left: Illustration & cute images -->
-        <div class="illustration">
-          <!-- Floating hearts -->
-          <div class="hearts" aria-hidden="true"></div>
-          <!-- Rings Illustration (SVG) -->
-          <div class="ring" aria-hidden="true">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <!-- soft halo -->
-              <defs>
-                <radialGradient id="halo" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#fff7d1"/>
-                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0%" stop-color="#ffd166"/>
-                  <stop offset="100%" stop-color="#f6ad55"/>
-                </linearGradient>
-                <linearGradient id="gem" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0%" stop-color="#c3dafb"/>
-                  <stop offset="100%" stop-color="#a5b4fc"/>
-                </linearGradient>
-              </defs>
-              <circle cx="100" cy="100" r="90" fill="url(#halo)"/>
-              <!-- ring 1 -->
-              <circle cx="90" cy="110" r="44" fill="none" stroke="url(#gold)" stroke-width="14"/>
-              <!-- ring 2 -->
-              <circle cx="120" cy="95" r="44" fill="none" stroke="url(#gold)" stroke-width="14"/>
-              <!-- diamond -->
-              <g transform="translate(130 40) rotate(-10)">
-                <polygon points="0,20 18,0 36,20 18,40" fill="url(#gem)" stroke="#93c5fd" stroke-width="2"/>
-                <rect x="16" y="38" width="4" height="14" fill="url(#gold)" rx="2"/>
-              </g>
-            </svg>
-          </div>
+<body id="skrollr-body">
+  <nav id="custom-navbar" class="navbar" data-spy="affix"
+    style="position: fixed; border-bottom: none;">
+    <div class="container" style="padding: 0;">
+      <div class="row">
+        <div class="col-xs-1">
+          <div id="logo"><a href="#" style="font-family: VogueAvantGarde;font-size: 30px">D&G</a></div>
+        </div>
+        <div class="col-xs-11 menu-2" style="height: 60px;">
+          <ul class="nav navbar-nav navbar-right"
+            style="height: 100%; display: flex; justify-content: flex-end; align-items: center;">
+            <li><a href="#our_story">Our Story</a></li>
+            <li><a href="#when_where">When & Where</a></li>
+            <li><a href="#events">Event Timeline</a></li>
+            <li><a href="#dresscode-theme">Dress code</a></li>
+            <li><a href="#hotel">Guest Support</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
         </div>
 
-        <!-- Right: Content & actions -->
-        <div>
-          <div class="gallery" aria-label="Cute preview images">
-            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800&auto=format&fit=crop" alt="Two wedding rings on a ribbon" />
-            <img src="https://images.unsplash.com/photo-1495314736024-fa5e4b37b979?q=80&w=800&auto=format&fit=crop" alt="Lovely macarons and hearts" />
-          </div>
-          <div class="footer">
-            <span>With love, always 💗</span>
+        <div class="menu-icon-wrapper">
+          <div class="nav-icon3">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
+  </nav>
+  <div id="menu-mobile">
+    <ul>
+      <li><a href="#our_story">Our Story</a></li>
+      <li><a href="#when_where">When & Where</a></li>
+      <li><a href="#events">Event Timeline</a></li>
+      <li><a href="#dresscode-theme">Dress code</a></li>
+      <li><a href="#hotel">Guest Support</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
   </div>
+  <!-- Header End -->
 
-  <script>
-    // Generate floating hearts for a cute feel 💕
-    const container = document.querySelector('.hearts');
-    const emojis = ['❤','💖','💞','💘','💓'];
-    const count = 18;
-    for (let i=0; i<count; i++) {
-      const h = document.createElement('div');
-      h.className = 'heart';
-      h.style.left = Math.random()*100 + '%';
-      h.style.bottom = (-10 + Math.random()*10) + '%';
-      h.style.setProperty('--dur', (7 + Math.random()*6) + 's');
-      h.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-      container.appendChild(h);
-    }
-  </script>
+  <div class="page">
+
+    <!-- Intro -->
+    <section class="home_intro white_txt parallax2" data-image="images/Header-hw.jpg">
+      <div class="home_txt" data-0="opacity:1" data-top-bottom="opacity:0">
+
+        <!-- Intro Text -->
+
+        <div class="title1 title1_2">Getting Married</div>
+        <div class="title0" style="margin-top: 30px;"><span>July 11 2026</span></div>
+      </div>
+      <div class=""></div>
+    </section>
+    <!-- Intro End -->
+
+    <!-- Married -->
+    <section class="married clearfix" id="married">
+      <div class="container">
+        <div class="im1 parallax" data-bottom="left:20%" data-center="left:0" data-image="images/chure.jpg">
+        </div>
+        <div class="im2 parallax" data-bottom="right:20%" data-center="right:0" data-image="images/codau.jpg">
+        </div>
+
+        <div class="married_txt" data-bottom="opacity:0" data-center="opacity:1">
+          <div style="width: 300px; margin: 0 auto;">
+
+            <h2><span>You're</span> Invited</h2>
+            <div class="content-invite">
+              Duyen Lam and Gregory Dieter are finally saying <br> "I do"<br>
+              <br> <b style="font-weight: bold">Saturday, July 11th, 2026.<b/> <br>
+              Phu Quoc island, Viet Nam
+              <a href="#rsvp" class="btn go">RSVP NOW</a>
+            </div>
+
+          </div>
+
+          <div class="married_coundown" style="margin-bottom: 40px;"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Married End -->
+    <!-- Message -->
+
+    <section id="message" class="message-section">
+      <div class="container" style="padding-bottom: 20px;padding-top: 20px">
+        <div class="message-label">DUYEN AND GREG</div>
+        <h2 class="message-title">Welcome to our Wedding Website</h2>
+        <div class="message-body">
+          <p>Dear Family and Friends,</p>
+          <p>
+            We are so excited and blessed to have you join us on our wedding day. We knew we were meant for each
+            other when we realized, in addition to family and friends, our most favorite things all start with the
+            letter “F”: Family, Friends, Food, Fraveling, and Phuc Quoc (which doesn’t start with an F but is
+            phonetically the same). What an exciting and beautiful day it will be July 11, 2026, to share all our
+            favorites with you!
+          </p>
+          <p>
+            Love,<br>
+            Duyen and Greg
+          </p>
+          <p class="manrope-font">Gửi Gia Đình và Bạn Bè thân yêu,</p>
+          <p class="manrope-font">
+            Chúng con vô cùng háo hức và may mắn khi được chia sẻ ngày cưới của mình cùng với mọi người. Chúng con
+            biết rằng mình dành cho nhau khi nhận ra rằng — ngoài gia đình và bạn bè — những điều chúng con yêu thích
+            nhất đều bắt đầu bằng chữ “F” trong ngôn ngữ tiếng Anh: Family (Gia đình), Friends (Bạn bè), Food (Ẩm
+            thực), Fraveling (Du lịch), và Phú Quốc (dù không bắt đầu bằng chữ F, nhưng nghe cũng giống mà!). Ngày 11
+            tháng 7 năm 2026 chắc chắn sẽ là một ngày thật tuyệt vời và đáng nhớ, khi chúng con được cùng chia sẻ tất
+            cả những điều yêu thích nhất với những người thân yêu nhất.
+          </p>
+          <p class="manrope-font">
+            Thân mến,<br>
+            Duyên và Greg
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Message End -->
+
+    <!-- Story -->
+    <section class="our_story" id="our_story">
+      <h2><span>Our</span> Story</h2>
+
+      <!-- Wrapper -->
+      <div class="story_wrapper">
+
+        <!-- Item -->
+        <div class="story_item">
+          <div class="story_img parallax" data-image="images/thedaywemet.jpg">
+          </div>
+          <div class="story_plane">
+            <div class="story_txt">
+              <div class="story_title">
+                The Day We Met
+                <i>June, 2020</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="story_item">
+          <div class="story_img parallax" data-image="images/thefirsttrip.jpg">
+          </div>
+          <div class="story_plane">
+            <div class="story_txt">
+              <div class="story_title">
+                The First Trip
+                <i>August, 2021</i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story_item">
+          <div class="story_img parallax" data-image="images/theproposal.png">
+          </div>
+          <div class="story_plane">
+            <div class="story_txt">
+              <div class="story_title">
+                The Proposal
+                <i>June, 2024</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- When & Where -->
+
+    <section id="when_where" style="padding-top: 50px; margin: 0 auto 50px;">
+      <h2><span>Where &amp;</span> When</h2>
+      <div>
+        <div>
+          <img src="images/hotel.jpg" class="mobile-hide">
+          <img src="images/hotel.jpg" class="desktop-hide">
+        </div>
+
+        <div style="max-height: fit-content; padding: 42px;" class="namnghi">
+          <div class="title3 title-address "><i class="fa fa-map-marker" aria-hidden="true"></i><a href="https://maps.app.goo.gl/toszEhNPTz9B6FPa8" target="_blank">
+            JW Marriott Phu Quoc Emerald Bay</a><br /> </div>
+          <a href="https://maps.app.goo.gl/toszEhNPTz9B6FPa8" target="_blank">Khem Beach, An Thoi, Phu Quoc, Kien Giang</a>
+        </div>
+      </div>
+    </section>
+    <!-- When & Where End -->
+
+    <!-- Events -->
+    <section class="our_story events" id="events">
+      <h2><span>Event</span> Timeline</h2>
+
+      <!-- Wrapper -->
+      <div class="story_wrapper">
+
+        <!-- Item -->
+        <div class="story_item">
+          <div class="story_img parallax" data-image="images/gallery/IMG_4367.JPG">
+          </div>
+          <div class="story_plane">
+            <div class="story_txt">
+              <div class="story_title">
+                Beach Welcome
+                <i>4:00 PM</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="story_item">
+          <div class="story_img parallax" data-image="images/caremony.jpg">
+          </div>
+          <div class="story_plane">
+            <div class="story_txt">
+              <div class="story_title">
+                Wedding Ceremony
+                <i>4:30 PM</i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story_item">
+          <div class="story_img parallax" data-image="images/catching.jpg">
+          </div>
+          <div class="story_plane">
+            <div class="story_txt">
+              <div class="story_title">
+                Cocktail Hour
+                <i>6:00PM</i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story_item">
+          <div class="story_img parallax" data-image="images/dinner.jpg">
+          </div>
+          <div class="story_plane">
+            <div class="story_txt">
+              <div class="story_title">
+                Reception Dinner
+                <i>7:00 PM</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Item -->
+        <div class="story_item">
+          <div class="story_img parallax" data-image="images/after.jpg">
+          </div>
+          <div class="story_plane">
+            <div class="story_txt">
+              <div class="story_title">
+                Late Night Party
+                <i>9:00 PM</i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story_item">
+          <div class="story_img parallax" data-image="images/gallery/IMG_4365.JPG">
+          </div>
+          <div class="story_plane">
+            <div class="story_txt">
+              <div class="story_title">
+                Closing
+                <i>1:00 AM</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Events End -->
+
+    <!-- Dress code Theme -->
+    <section class="married clearfix" id="dresscode-theme" style="margin:0 auto; padding: 0 0 60px; max-width: 1024px; text-align: center;">
+      <h2 style="margin-bottom: 0;"><span>Dress</span> Code</h2>
+      <h3 class="title3" style="margin-bottom: 10px;">Semi-Formal Summer Chic</h3>
+      <p style="max-width: 600px; margin: 0 auto; line-height: 1.7;">
+        Bright colors, airy fabrics, and a touch of whimsical romance.
+      </p>
+      <div class="dresscode-theme-dots">
+        <span class="dresscode-theme-dot" style="background:#fbe4e1;"></span>
+        <span class="dresscode-theme-dot" style="background:#ffd9b3;"></span>
+        <span class="dresscode-theme-dot" style="background:#ffeaa7;"></span>
+        <span class="dresscode-theme-dot" style="background:#c9f1df;"></span>
+        <span class="dresscode-theme-dot" style="background:#d9e9ff;"></span>
+      </div>
+    
+    </section>
+    <!-- Dress code Theme End -->
+    <!-- Hotel Reservation -->
+    <section id="hotel" class="hotel" style="padding-top: 50px">
+      <h2><span>Guest</span> Information & Support</h2>
+      <div class="gt-wrap">
+        <div class="gt-table" role="table" aria-label="Guest Information">
+          <div class="gt-row gt-head" role="row">
+            <div class="gt-cell">CATEGORY</div>
+            <div class="gt-cell">DETAILS</div>
+          </div>
+          <div class="gt-row">
+            <div class="gt-cell gt-left">🚖 Getting There</div>
+            <div class="gt-cell">
+              <p>Phu Quoc International Airport (PQC) is approximately <strong>20 minutes</strong> from the wedding venue.</p>
+              <p>Taxis and ride-sharing apps such as <strong>Grab</strong>, <strong>Vinasun</strong>, and <strong>Mai Linh</strong> are available.</p>
+            </div>
+          </div>
+          <div class="gt-row">
+            <div class="gt-cell gt-left">🏨 Where to Stay</div>
+            <div class="gt-cell">
+              <p>To make your stay comfortable, we’ve gathered a few hotel options nearby:</p>
+                    <p>Premier Village Phu Quoc (~$120/night)</p>
+                    <p>Sunset Town (~$100/night)</p>
+                    <p>JW Marriott Phu Quoc Emerald Bay Resort</p>
+              <p>If you wish to stay at the JW Marriott, please <strong>contact the couple before booking</strong> to enjoy special wedding-guest rates.</p>
+            </div>
+          </div>
+
+          <div class="gt-row">
+            <div class="gt-cell gt-left">🍽 Where to Eat & Experience</div>
+            <div class="gt-cell">
+              <p>Phu Quoc is known for its amazing seafood and island cuisine.</p>
+              <p>A few local favorites include:</p>
+                <p><strong>Private Boat Tour</strong> – Lunch on Boat , Snorkleing, Fishing</p>
+                <p><strong>The Crab House</strong> – casual seafood dining</p>
+                <p><strong>Chuon Chuon Bistro & Sky Bar</strong> – great view at sunset</p>
+            </div>
+          </div>
+
+          <div class="gt-row">
+            <div class="gt-cell gt-left">🌅 What to See</div>
+            <div class="gt-cell">
+              <p>During your stay, don’t miss these beautiful spots:</p>
+                <p><strong>Sunset Sanato Beach Club</strong> – famous for golden-hour photos</p>
+                <p><strong>Phu Quoc Night Market</strong> – local food, souvenirs, and fun</p>
+            </div>
+          </div>
+
+          <div class="gt-row">
+            <div class="gt-cell gt-left">📞 Guest Support</div>
+            <div class="gt-cell">
+              <p>Need help with travel, accommodations, or bookings? Feel free to reach out anytime:</p>
+              <p>📱 <strong>WhatsApp:</strong> +84344271554 (Mr.Pháp)</p>
+              <p class="closing">We’re so excited to celebrate this special weekend with you in paradise 🌴✨</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hotel Reservation End -->
+
+    <!-- RSVP -->
+    <section class="rsvp" id="rsvp" style="background-color: #090909;">
+      <div class="container">
+        <h2 style="color: #fff;"><span>Join</span> Our Party</h2>
+        <div style="background: #FFFFFF;padding: 20px 0;min-height: 650px">
+          <iframe src="https://www.cognitoforms.com/f/-f1QjBet2USlKHNEz8FIZg/2" allow="payment" style="border:0;width:80%;" height="349"></iframe>
+        </div>
+      </div>
+    </section>
+    <!-- RSVP End -->
+    <!-- Gallery -->
+    <section id="gallery" class="section gallery">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center heading">
+            <span>Our Memories</span>
+            <h2>Wedding Gallery</h2>
+            <p></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="button-group filters-button-group">
+<!--              <button class="button" data-filter="*">All</button>-->
+              <button class="button is-checked" data-filter=".cathedral">Cathedral Nuptials</button>
+              <button class="button" data-filter=".engagement">Engagement</button>
+              <button class="button" data-filter=".traveling">Traveling</button>
+            </div>
+            <div class="grid grid--margin">
+              <div class="grid-sizer"></div>
+              <div class="grid-item grid-item--width cathedral">
+                <a href="images/gallery/IMG_4366.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4366.JPG" alt="IMG_4366">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral">
+                <a href="images/gallery/IMG_4362.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4362.JPG" alt="IMG_4362">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4361.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4361.JPG" alt="IMG_4361">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4371.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4371.JPG" alt="IMG_4371">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4365.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4365.JPG" alt="IMG_4365">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4357.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4357.JPG" alt="IMG_4357">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4358.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4358.JPG" alt="IMG_4358">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4364.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4364.JPG" alt="IMG_4364">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4363.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4363.JPG" alt="IMG_4363">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4378.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4378.JPG" alt="IMG_4378">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4360.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4360.JPG" alt="IMG_4360">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4367.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4367.JPG" alt="IMG_4367">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4356.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4356.JPG" alt="IMG_4356">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4369.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4369.JPG" alt="IMG_4369">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4368.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4368.JPG" alt="IMG_4368">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width engagement">
+                <a href="images/gallery/duyen&gregtakemilwaukee_Original.PNG" data-lightbox="roadtrip">
+                  <img src="images/gallery/duyen&gregtakemilwaukee_Original.PNG" alt="duyen greg milwaukee">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4373.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4373.JPG" alt="IMG_4373">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4359.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4359.JPG" alt="IMG_4359">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width engagement">
+                <a href="images/gallery/luckyones_Original.PNG" data-lightbox="roadtrip">
+                  <img src="images/gallery/luckyones_Original.PNG" alt="luckyones Original">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4370.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4370.JPG" alt="IMG_4370">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4372.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4372.JPG" alt="IMG_4372">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4376.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4376.JPG" alt="IMG_4376">
+                </a>
+              </div>
+              <!-- <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/thedaywemet.png" data-lightbox="roadtrip">
+                  <img src="images/gallery/thedaywemet.png" alt="thedaywemet">
+                </a>
+              </div> -->
+              <div class="grid-item grid-item--width engagement">
+                <a href="images/gallery/ohmy!_Original.PNG" data-lightbox="roadtrip">
+                  <img src="images/gallery/ohmy!_Original.PNG" alt="ohmy Original">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4374.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4374.JPG" alt="IMG_4374">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4377.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4377.JPG" alt="IMG_4377">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width cathedral friends banguet family party">
+                <a href="images/gallery/IMG_4375.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/IMG_4375.JPG" alt="IMG_4375">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20210729_221743385.PORTRAIT.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20210729_221743385.PORTRAIT.jpg" alt="PXL_20210729_221743385.PORTRAIT">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20211016_211833121.PORTRAIT.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20211016_211833121.PORTRAIT.jpg" alt="PXL_20211016_211833121.PORTRAIT">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20241019_164918257.MP.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20241019_164918257.MP.jpg" alt="PXL_20241019_164918257.MP">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20211226_225008484.MP.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20211226_225008484.MP.jpg" alt="PXL_20211226_225008484.MP">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20210729_145332865.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20210729_145332865.jpg" alt="PXL_20210729_145332865">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20221008_171359775.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20221008_171359775.jpg" alt="PXL_20221008_171359775">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20201023_203404709.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20201023_203404709.jpg" alt="PXL_20201023_203404709">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20210214_162727041.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20210214_162727041.jpg" alt="PXL_20210214_162727041">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20201018_001733325.NIGHT.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20201018_001733325.NIGHT.jpg" alt="PXL_20201018_001733325.NIGHT">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20211030_175331376.MP.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20211030_175331376.MP.jpg" alt="PXL_20211030_175331376.MP">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20210727_121030227.MP.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20210727_121030227.MP.jpg" alt="PXL_20210727_121030227.MP">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20210728_103438594.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20210728_103438594.jpg" alt="PXL_20210728_103438594">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20230304_165616805.NIGHT.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20230304_165616805.NIGHT.jpg" alt="PXL_20230304_165616805.NIGHT">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20200926_215932141.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20200926_215932141.jpg" alt="PXL_20200926_215932141">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20230703_172300945.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20230703_172300945.jpg" alt="PXL_20230703_172300945">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/DSCF7802.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/DSCF7802.jpg" alt="DSCF7802">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20230703_122611380.MP.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20230703_122611380.MP.jpg" alt="PXL_20230703_122611380.MP">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20230506_185950954.MP.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20230506_185950954.MP.jpg" alt="PXL_20230506_185950954.MP">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/DSCF7672.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/DSCF7672.JPG" alt="DSCF7672">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20230303_203337510.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20230303_203337510.jpg" alt="PXL_20230303_203337510">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20210321_174158060.MP.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20210321_174158060.MP.jpg" alt="PXL_20210321_174158060.MP">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/IMG_0139.JPG" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/IMG_0139.JPG" alt="IMG_0139">
+                </a>
+              </div>
+              <div class="grid-item grid-item--width traveling">
+                <a href="images/gallery/travel/PXL_20240809_033110458.MP.jpg" data-lightbox="roadtrip">
+                  <img src="images/gallery/travel/PXL_20240809_033110458.MP.jpg" alt="PXL_20240809_033110458.MP">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div> <!-- /.row -->
+      </div>
+    </section>
+    <!-- Gallery End -->
+
+    <!-- Gift Registry -->
+    <!-- Gift Registry End -->
+
+
+    <!-- Footer -->
+    <section class="footer white_txt parallax" id="footer" data-image="images/footerfn.jpg">
+      <div class="container" style="padding-top: 66px">
+
+        <!-- Thanks Text -->
+        <div class="title2 thank-you" style="font-size: 78px;">Thank you</div>
+        <p class="titel-thanks">with so much love for joining our special day</p>
+      </div>
+
+
+
+    </section>
+
+
+    <!-- JQuery -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <!-- CountDown JS -->
+    <script type="text/javascript" src="js/jquery.plugin.min.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+
+    <!-- ColorBox JS -->
+    <script src="js/jquery.colorbox-min.js"></script>
+    <!-- OWL Carousel JS -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- ScrollR JS -->
+    <script src="js/skrollr.min.js"></script>
+
+
+
+    <!-- PrefixFree -->
+    <script src="js/prefixfree.min.js"></script>
+
+    <!-- FireFly JS -->
+    <script src="js/jquery.firefly-0.3-min.js"></script>
+
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <!-- Theme JS -->
+    <script src="js/script.js"></script>
+    <script src="https://www.cognitoforms.com/f/iframe.js"></script>
+
+  </div>
 </body>
 </html>
