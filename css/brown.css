@@ -1,6 +1,6 @@
 
 h2 {
-	color: #090909
+	color: #5f9bb3
 }
 h2:after {
 	/* background: url(../images/brown/bullet.png); */
@@ -20,19 +20,19 @@ h2:after {
 }
 
 .btn {
-	color:#090909!important;
-	border: 2px solid #090909
+	color:#5f9bb3!important;
+	border: 2px solid #5f9bb3
 	
 }
 	.btn:hover {
-		background:#323232;
+		background:#5f9bb3;
 		color:#fff!important
 	}
 	.btn:active, .btn:focus {
 		background:#323232;
 	}
 .married_coundown {
-	color: #090909;
+	color: #5f9bb3;
 }
 .double_arrow {
 	background: url(../images/brown/double_arrow.png);
@@ -54,7 +54,7 @@ h2:after {
 .owl-page:after {
 	/* background: url(../images/brown/bullet.png); */
 	background-color: #fff;
-	border: 2px solid #090909;
+	border: 2px solid #5f9bb3;
 	height: 15px;
 	width: 15px;
 	border-radius: 50%;
@@ -62,7 +62,7 @@ h2:after {
 }
 .owl-page.active:after {
 	/* background: url(../images/brown/bullet_active.png); */
-	background-color: #090909;
+	background-color: #5f9bb3;
 	height: 15px;
 	width: 15px;
 	border-radius: 50%;

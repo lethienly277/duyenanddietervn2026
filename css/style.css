@@ -28,7 +28,9 @@ body {
 	font: 300 20px/24px 'VogueAvantGarde', serif;
 	min-height: 100%;
 	height: 100%;
-	color: #000000;
+	color: #5f9bb3;
+	position: relative;
+	background-color: #ffffff;
 }
 
 body b {
@@ -38,6 +40,50 @@ body b {
 html {
 	min-height: 100%;
 	height: 100%
+}
+
+#skrollr-body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image:
+		url('../images/vooc (1).png'),
+		url('../images/vooc (1).png'),
+		url('../images/vooc (1).png'),
+		url('../images/vooc (1).png'),
+		url('../images/vooc (1).png'),
+		url('../images/vooc (1).png'),
+		url('../images/vooc (1).png'),
+		url('../images/vooc (1).png'),
+		url('../images/vooc (1).png'),
+		url('../images/vooc (1).png');
+	background-repeat: no-repeat;
+	background-size:
+		120px,
+		70px,
+		50px,
+		90px,
+		65px,
+		45px,
+		80px,
+		55px,
+		60px,
+		40px;
+	background-position:
+		4% 10%,
+		18% 35%,
+		6% 68%,
+		32% 18%,
+		40% 55%,
+		55% 82%,
+		70% 22%,
+		82% 48%,
+		93% 16%,
+		92% 78%;
+	opacity: 0.09;
+	filter: drop-shadow(0 4px 8px rgba(0, 75, 130, 0.18));
 }
 
 img {
@@ -350,7 +396,7 @@ body.overflow-hidden #custom-navbar.navbar-scroll {
 }
 
 .filters-button-group .is-checked {
-	border-bottom: 2px solid #000;
+	border-bottom: 2px solid #5f9bb3;
 }
 
 .gallery-list {
@@ -490,7 +536,7 @@ body.overflow-hidden #custom-navbar.navbar-scroll {
 	min-height: 100%;
 	position: relative;
 	height: 100%;
-
+	z-index: 1;
 }
 
 #bien {
@@ -800,7 +846,7 @@ body.overflow-hidden #custom-navbar.navbar-scroll {
 	background: #ffffff !important;
 }
 .nav-icon3.scroll>span{
-	background: #000000 !important;
+	background: #5f9bb3 !important;
 }
 
 .nicescroll-rails {
@@ -849,7 +895,7 @@ section {
 }
 
 a {
-	color: #000;
+	color: #5f9bb3;
 
 }
 
@@ -896,7 +942,7 @@ h1 span:after {
 	height: 40px;
 	transform: rotate(17deg);
 	margin: 9px 0 0 13px;
-	background: #000000;
+	background: #5f9bb3;
 }
 
 .inside_intro h1 {
@@ -1863,7 +1909,7 @@ header {
 }
 
 .story_plane {
-	background: #000;
+	background: #5f9bb3;
 	height: 100%;
 	width: 50%;
 	position: relative;
@@ -2758,13 +2804,13 @@ span.wpcf7-not-valid-tip {
 		margin-top: 120px;
 	}
 	.story_title {
-		color: #000 !important;
+		color: #5f9bb3 !important;
 		font-size: 20px !important;
 		margin-top: 140px !important;
 		font-family: 'VogueAvantGarde', serif !important;
 	}
 	.story_title i {
-		color: #000 !important;
+		color: #5f9bb3 !important;
 		font-size: 20px !important;
 		font-family: 'VogueAvantGarde', serif !important;
 	}
@@ -3219,7 +3265,7 @@ h1 {
   }
 
   .navbar-scroll a {
-	color: #000 !important;
+	color: #5f9bb3 !important;
   }
 .navbar ul li a:after {
 	opacity: 0;
